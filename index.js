@@ -79,6 +79,7 @@ function startGame()
         if (sum <= 20)
         {
             message = "do you wanna draw a new card?"
+            console.log("still in the game");
         }
 
 
@@ -88,6 +89,7 @@ function startGame()
         {
             message ="wohoo! you got a blackjack"
             //hasBlackJack = true;
+            console.log("nice card");
         }
 
 
@@ -97,6 +99,7 @@ function startGame()
         {
             message="you are out of the game"
             //isAlive = false;
+            console.log("out of the game");
         }
 
 
@@ -110,7 +113,9 @@ function startGame()
 
     function newCard()
     {
-        console.log("drawing anew card from the deck")
-        sumEl.textContent = sum + card;
+        console.log("drawing a new card from the deck")
+        sum = sum + card ;
+        sumEl.textContent = "sum: " + sum ;
         console.log("new sum: " + sum) ;
+        startGame();
     }
