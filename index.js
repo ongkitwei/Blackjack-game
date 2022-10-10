@@ -1,55 +1,7 @@
-/*let firstCard = 5;
-let secondCard = 7;
-
-const sum = firstCard + secondCard ;
-
-
-if (sum > 21)
-{
-    console.log ("BURST! 😓") ; 
-}
-
-
-
-else if (sum === 21)
-{
-    console.log("congrats.. you won! 😁");
-}
-
-
-
-else if ( sum < 21)
-{
-    console.log("Do you wanna draw a new card? 😠");
-} */
-
-
-
-/*let age = 100;
-
-if (age < 100)
-{
-    console.log("not elegible");
-}
-
-
-else if (age === 100)
-{
-    console.log("here is your brithday card from the king")
-}
-
-
-
-else
-{
-    console.log("not elegible, you have already gotten one")
-}*/
-
-
- 
 let firstCard = 10;
 let secondCard = 7;
-let card = 7;
+let card = 1;
+let cards = [firstCard, secondCard] ;
 
 
 let sum = firstCard + secondCard ;
@@ -76,23 +28,28 @@ let cardsEl = document.querySelector("#cards-el") ;
 
 function startGame()
 {
+    renderGame();
+}
+
+
+
+
+
+function renderGame()
+{
         if (sum <= 20)
         {
             message = "do you wanna draw a new card?"
-            console.log("still in the game");
+            console.log("still in the game, wanna draw new card?");
         }
-
-
 
 
         else if (sum === 21)
         {
             message ="wohoo! you got a blackjack"
             //hasBlackJack = true;
-            console.log("nice card");
+            console.log("Blackjack!!!!!!");
         }
-
-
 
 
         else
@@ -111,11 +68,13 @@ function startGame()
 
 
 
+
+
     function newCard()
     {
         console.log("drawing a new card from the deck")
         sum = sum + card ;
         sumEl.textContent = "sum: " + sum ;
         console.log("new sum: " + sum) ;
-        startGame();
+        renderGame();
     }
