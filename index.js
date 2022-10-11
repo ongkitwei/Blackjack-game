@@ -1,6 +1,6 @@
 let firstCard = 10;
 let secondCard = 7;
-let card = 1;
+
 let cards = [firstCard, secondCard] ;
 
 
@@ -37,6 +37,9 @@ function startGame()
 
 function renderGame()
 {
+    
+    console.log(cards);
+
         if (sum <= 20)
         {
             message = "do you wanna draw a new card?"
@@ -62,7 +65,7 @@ function renderGame()
 
         messageEl.textContent = message ;
         sumEl.textContent = "sum: " + sum ;   //or can do it this way `sum: ${sum}`
-        cardsEl.textContent = "Cards: " + firstCard + " " + secondCard ;
+        cardsEl.textContent = "Cards: " + cards ;
     }
 
 
@@ -72,9 +75,13 @@ function renderGame()
 
     function newCard()
     {
+        let card = 1;
+        cards.push(card) ;
+        
         console.log("drawing a new card from the deck")
         sum = sum + card ;
-        sumEl.textContent = "sum: " + sum ;
+        //sumEl.textContent = "sum: " + sum ;
+        cardsEl.textContent = "hello"
         console.log("new sum: " + sum) ;
         renderGame();
     }
