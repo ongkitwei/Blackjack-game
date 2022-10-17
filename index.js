@@ -1,5 +1,5 @@
-let firstCard = 10;
-let secondCard = 7;
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 
 let cards = [firstCard, secondCard] ;
 
@@ -37,9 +37,25 @@ function startGame()
 
 function renderGame()
 {
+
+    sumEl.textContent = "sum: " + sum ;   //or can do it this way `sum: ${sum}`
+    
+    
+    cardsEl.textContent = "Cards: "
     
     console.log(cards);
 
+
+    for (let i = 0; i < cards.length; i+=1)
+    {
+        cardsEl.textContent = cardsEl.textContent + cards[i] + " ";
+        console.log( cards[i]) ;
+
+    }
+
+
+
+    
         if (sum <= 20)
         {
             message = "do you wanna draw a new card?"
@@ -64,8 +80,7 @@ function renderGame()
 
 
         messageEl.textContent = message ;
-        sumEl.textContent = "sum: " + sum ;   //or can do it this way `sum: ${sum}`
-        cardsEl.textContent = "Cards: " + cards ;
+         
     }
 
 
@@ -75,7 +90,7 @@ function renderGame()
 
     function newCard()
     {
-        let card = 1;
+        let card = getRandomCard();
         cards.push(card) ;
         
         console.log("drawing a new card from the deck")
@@ -84,4 +99,13 @@ function renderGame()
         cardsEl.textContent = "hello"
         console.log("new sum: " + sum) ;
         renderGame();
+    }
+
+
+
+
+
+    function getRandomCard()
+    {
+        return 5;
     }
